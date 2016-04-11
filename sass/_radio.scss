@@ -1,26 +1,22 @@
+$dot-pos: 4px;
+
 .magic-radio + label {
   &:before {
     border-radius: 50%;
   }
   &:after {
-    top: 6px;
-    left: 6px;
+    top: $dot-pos;
+    left: $dot-pos;
     width: $dot-size;
     height: $dot-size;
     border-radius: 50%;
     background: $main-color;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.2) inset, 0 .3px .1px rgba(255,255,255,0.5) inset, 0 -.3px .1px rgba(0, 0, 0, 0.5) inset;
+    transform: scale(.8);
   }
 }
 
-.magic-radio:checked + label {
-  &:before {
-    border: 1px solid $main-color;
-  }
-}
 .magic-radio:checked[disabled] + label {
-  &:before {
-    border: 1px solid $disabled-checked-color;
-  }
   &:after {
     background: $disabled-checked-color;
   }
